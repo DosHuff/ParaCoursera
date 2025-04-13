@@ -1,8 +1,8 @@
-let autorizacion = "admin";
+let autorizacion = "Empleado";
 let accessLevel;
 
 if (autorizacion === "Empleado") {
-    accessLevel = "Full access granted";
+    accessLevel = "Está autorizado a tner acceso a los ";
 } else if (autorizacion === "Miembro") {
     accessLevel = "Limited access granted";
 } else if (autorizacion === "Miembro") {
@@ -17,10 +17,10 @@ let isLoggedIn = true;
 let userMessage;
 
 if (isLoggedIn) {
-    if (userRole === "admin") {
-        userMessage = "Welcome, Admin!";
+    if (autorizacion === "Empleado") {
+        userMessage = "¡Bienvenido, Empleado!";
     } else {
-        userMessage = "Welcome, User!";
+        userMessage = "¡Bienvenido, Usuario!";
     }
 } else {
     userMessage = "Please log in to access the system.";
@@ -28,15 +28,15 @@ if (isLoggedIn) {
 
 console.log("User Message:", userMessage);
 
-let userType = "subscriber";
+let userType = "Empleado";
 let userCategory;
 
 switch (userType) {
-    case "admin":
-        userCategory = "Administrator";
+    case "Empleado":
+        userCategory = "Empleado";
         break;
-    case "manager":
-        userCategory = "Manager";
+    case "Miembro":
+        userCategory = "Miembro";
         break;
     case "subscriber":
         userCategory = "Subscriber";
