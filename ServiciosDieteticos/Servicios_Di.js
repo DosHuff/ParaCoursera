@@ -1,17 +1,17 @@
-let autorizacion = "Empleado";
+let autorizacion = "Miembro";
 let accessLevel;
 
 if (autorizacion === "Empleado") {
-    accessLevel = "Está autorizado a tner acceso a los ";
+    accessLevel = "Está autorizado a tener acceso a los Servicios Dietéticos.";
 } else if (autorizacion === "Miembro") {
-    accessLevel = "Limited access granted";
-} else if (autorizacion === "Miembro") {
-    accessLevel = "Limited access granted";
+    accessLevel = "Está autorizado a tener acceso a los Servicios Dietéticos y auna interaccción uno a uno con un dietista.";
+} else if (autorizacion === "Suscriptor") {
+    accessLevel = "Está autorizado a tener acceso parcial para facilitar los Servicios Dietéticos únicamente.";
 } else {
-    accessLevel = "No access granted";
+    accessLevel = "Necesita inscribirse o al menos suscribirse primero para poder acceder a esta instalación.";
 }
 
-console.log("Access Level:", accessLevel);
+console.log("Nivel de acceso:", accessLevel);
 
 let isLoggedIn = true;
 let userMessage;
@@ -19,16 +19,18 @@ let userMessage;
 if (isLoggedIn) {
     if (autorizacion === "Empleado") {
         userMessage = "¡Bienvenido, Empleado!";
+    } else if (autorizacion === "Miembro") {
+        userMessage = "¡Bienvenido, Miembro!";
     } else {
-        userMessage = "¡Bienvenido, Usuario!";
+        userMessage = "¡Bienvenido, Suscriptor!";
     }
 } else {
-    userMessage = "Please log in to access the system.";
+    userMessage = "Necesita inscribirse o al menos suscribirse primero para poder acceder a esta instalación.";
 }
 
-console.log("User Message:", userMessage);
+console.log("Mensaje al usuario:", userMessage);
 
-let userType = "Empleado";
+let userType = "Suscriptor";
 let userCategory;
 
 switch (userType) {
@@ -38,15 +40,15 @@ switch (userType) {
     case "Miembro":
         userCategory = "Miembro";
         break;
-    case "subscriber":
-        userCategory = "Subscriber";
+    case "Suscriptor":
+        userCategory = "Suscriptor";
         break;
     default:
-        userCategory = "Unknown";
+        userCategory = "No suscriptor";
 }
 
-console.log("User Category:", userCategory);
+console.log("Categoria de usuario:", userCategory);
 
 let isAuthenticated = true;
-let authenticationStatus = isAuthenticated ? "Authenticated" : "Not authenticated";
-console.log("Authentication Status:", authenticationStatus);
+let authenticationStatus = isAuthenticated ? "Autenticado" : "No autenticado";
+console.log("Estado de autenticación:", authenticationStatus);
